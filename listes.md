@@ -192,6 +192,20 @@ On a donc ici une boucle `for` pour laquelle, à chaque itération, on met à jo
 
 Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
 
+correction :
+def argmax(liste):
+    i_max = None
+    # On initialise elem_max à une valeur
+    # qui n'est clairement pas le max
+    if len(liste) > 0:
+        elem_max = liste[0] - 1  
+    for i, elem in enumerate(liste):
+        if elem > elem_max:
+            i_max = i
+            elem_max = elem
+    return i_max
+
+print(argmax([1, 6, 2, 4]))
 (ex4.1)=
 ### Exercice
 
